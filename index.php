@@ -201,8 +201,28 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script>
         //Codigo jQuery para mostrar e ocultar os formulários
+        $(function(){
+            $("#btnEsqueci").click(function(){
+                $("#caixaLogin").hide();//ocultar
+                $("#caixaSenha").show();//mostrar
+            });
 
-        
+
+            $("#btnRegistrado").click(function(){
+                $("#caixaSenha").hide();//ocultar
+                $("#caixaLogin").show();//mostrar
+
+
+            };)
+
+
+            $("#btnRegistrarNovo").click(function(){
+                $("#caixaRegistro").show();//mostrar
+                $("#caixaLogin").hide();//ocultar 
+            });
+        });
+
+
         </script>
 </body>
 
