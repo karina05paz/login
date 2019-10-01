@@ -2,9 +2,8 @@
 Sistema de login em PHP e Javascript.
 
 # aula04 - 01/10/19
-- Formulário de recuperação 
-- Formulário de cadastro 
-- Formulário de login
+- Validação com HTML5
+- Validação dos campos com jQuery
 
 # aula03 - 30/09/19
 - Formulário de cadasto de novos usuarios
