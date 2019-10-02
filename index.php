@@ -247,7 +247,7 @@
                 $("#caixaLogin").show();
             });
         });
-
+//comentario commit
         /*
          * Translated default messages for the jQuery validation plugin.
          * Locale: PT_BR
@@ -272,6 +272,8 @@
             min: jQuery.validator.format("Por favor, forne&ccedil;a um valor maior ou igual a {0}.")
         });
     </script>
+
+    
 
 </body>
 
