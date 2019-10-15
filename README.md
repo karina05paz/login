@@ -1,8 +1,14 @@
+
+
+
+# aula06 - 15/10/19
+Persistencia de dados no banco de dados.
+
 # login
 Sistema de login em PHP e Javascript.
 
 
-#aula 05 - 07/10/19
+# aula05 - 07/10/19
 
 # aula05 - 04/10/19
 Envio de dados do Front-end para o Back-end,
@@ -63,4 +69,11 @@ Layout Bootstrap para os formulários
    - Tecla Windows - Abrir o Visual Studio Code (é o azul)
    - *Abra pasta* no VS Code a pasta c:\xampp\htdocs\login
     
+    ## Importar o banco de dados
+    - Acessar no navegador htto://localhost/phpmyadmin
+    - Clicar em emportar
+    - Selecionar o arquivo, clicando em Browse ou escolha o arquivo
+    - Abra o arquivo 127.0.0.1.sql e clique em executar
+    - O banco deve ter sido importado corretamente
+
    
