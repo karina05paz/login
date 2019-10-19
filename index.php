@@ -221,6 +221,7 @@
                         method: 'post',
                         data: $("#formLogin").serialize() + '&action=login',
                         success: function(resposta) {
+                            
                             $("#alerta").show();
                             $(".resultado").html(resposta);
                         }
