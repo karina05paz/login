@@ -38,7 +38,7 @@ require_once "session.php";
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Perfil
+                    <?=$nomeDoUsuario?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Sobre</a>
@@ -56,16 +56,20 @@ require_once "session.php";
             
             <h2 class="display-2 text-center  rounded p-1 text-light" 
             style="background-color: deepPink; color:deepPink;">
-                Nome completo:
+            <?= $nomeCompleto ?>
             
             </h2>
 
             <h2 class="text-center">
-                E-mail Do Usuário: joaninha@gmail.com
+                E-mail Do Usuário: 
+                <a href="mailto:<?=$emailUsuario?>">
+                <?=$emailUsuario?>
+                </a>
             </h2>
 
             <h2 class="text-center">
-                Registrado em: 18/10/2019
+                Registrado em: 
+                <?=$dataCriado?>
             </h2>
 
 
