@@ -65,7 +65,7 @@ require_once "session.php";
                 <a href="mailto:<?=$emailUsuario?>">
                 <?=$emailUsuario?>
                 </a>
-            </h2>
+            </h2> 
 
             <h2 class="text-center">
                 Registrado em: 

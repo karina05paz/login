@@ -18,9 +18,10 @@ if(isset($_SESSION['nomeDoUsuario'])){
     $nomeDoUsuario = $linha['nomeDoUsuario'];
     $nomeCompleto = $linha['nomeCompleto'];
     $emailUsuario = $linha['emailUsuario'];
-    $dataCriado= $dia['dataCriado'];   = date('d');
-    $mes = date('m');
-    $ano = date('Y');
+    $dataCriado= $linha['dataCriado'];
+    
+    $dataCriado = date('d/m/Y', strtotime($dataCriado));
+    
     
 
 
