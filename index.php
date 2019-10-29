@@ -16,6 +16,7 @@
     <style>
         #alerta,
         #caixaSenha,
+        #caixaLogar,
         #caixaRegistro {
             display: none;
         }
@@ -36,47 +37,36 @@
         </section>
         <!-- Formulário de Login -->
         <section class="row">
-            
             <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaLogin">
                 <h2 class="text-center mt-2">
                     Entrar no Sistema
                 </h2>
                 <form action="#" method="post" class="p-2" id="formLogin">
-                    
                     <div class="form-group">
-                        <input type="text" name="nomeUsuario" id="nomeUsuario" placeholder="Nome de Usuário" class="form-control" required minlength="5"
-                        value="<?=
-                            isset($_COOKIE['nomeDoUsuario'])?$_COOKIE['nomeDoUsuario']:""; ?>">
+                        <input type="text" name="nomeUsuario" id="nomeUsuario" placeholder="Nome de Usuário" class="form-control" required minlength="5" value="<?=
+                                                                                                                                                                    isset($_COOKIE['nomeDoUsuario'])
+                                                                                                                                                                        ? $_COOKIE['nomeDoUsuario'] : "";
+                                                                                                                                                                ?>">
                     </div>
-                    
                     <div class="form-group">
-                        <input type="password" name="senhaUsuario" 
-                        id="senhaUsuario" placeholder="Senha" 
-                        class="form-control" required minlength="6" 
-                        value="<?= 
-                            isset($_COOKIE['senhaDoUsuario'])?$_COOKIE['senhaDoUsuario']:""; ?>">
+                        <input type="password" name="senhaUsuario" id="senhaUsuario" placeholder="Senha" class="form-control" required minlength="6" value="<?=
+                                                                                                                                                                isset($_COOKIE['senhaDoUsuario'])
+                                                                                                                                                                    ? $_COOKIE['senhaDoUsuario'] : "";
+                                                                                                                                                            ?>">
                     </div>
-
-                    
                     <div class="form-group mt-5">
-                        
-                    <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input" 
-                        
-                            <?= 
-                            isset($_COOKIE['senhaDoUsuario'])?" checked":"";
-                            ?>>
-                            
-                            
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input" <?=
+                                                                                                                isset($_COOKIE['senhaDoUsuario'])
+                                                                                                                    ? " checked" : ""; ?>>
                             <label for="lembrar" class="custom-control-label">
                                 Lembrar de mim.
                             </label>
+
                             <a href="#" class="float-right" id="btnEsqueci">
                                 Esqueci a senha!
                             </a>
-                    
                         </div>
-                    
                     </div>
                     <div class="form-group">
                         <input type="submit" value="::Entrar::" name="btnEntrar" id="btnEntrar" class="btn btn-primary btn-block">
@@ -87,7 +77,14 @@
                                 Registre-se aqui!
                             </a>
                         </p>
-                    </div>
+                        <div class="form-group">
+                            <p class="text-center">
+                                Mostre-me
+                                <a href="#" id="btnMostrar">
+                                    Mostrar
+                                </a>
+                            </p>
+                        </div>
                 </form>
             </div>
         </section>
@@ -119,6 +116,7 @@
                             </a>
                         </p>
                     </div>
+
                 </form>
             </div>
         </section>
@@ -164,8 +162,86 @@
                             </a>
                         </p>
                     </div>
+
                 </form>
             </div>
+        </section>
+        <section>
+
+
+            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaLogar">
+                <h2 class="text-center mt-2">
+                    Novo
+                </h2>
+                <form action="#" method="post" class="p-2" id="formLogar">
+                    <div class="form-group">
+                        <input type="text" name="nomeUsuario" id="nomeUsuario" placeholder="Nome de Usuário" class="form-control" required minlength="5" value="<?=
+                                                                                                                                                                    isset($_COOKIE['nomeDoUsuario'])
+                                                                                                                                                                        ? $_COOKIE['nomeDoUsuario'] : "";
+                                                                                                                                                                ?>">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="e-maill" id="emaill" placeholder="E-mail" class="form-control" value="">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="data" id="data2" placeholder="Data" class="form-control" value="">
+                    </div>
+                    <div class="form-group">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urlFacebook">url do Perfil</label>
+                        <input type="url" name="urlFacebook" id="urlFacebook" required placeholder="Página do perfil do Facebook" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urlImagem">url de imagem</label>
+                        <input type="url" name="urlImagem" id="urlImagem" required placeholder="Link da Imagem do seu Perfil" class="form-control">
+                        <label for="cidade">Cidade</label>
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select class="form-control" name="estado" id="estado">
+                                <option value="PR">Paraná</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="SC"> Santa Catarina</option>
+                            </select>
+                        </div>
+                        <select class="form-control" name="cidade" id="cidade">
+                            <option></option>
+                            <option value="Brusque">Brusque</option>
+                            <option value="Guabiruba">Guabiruba</option>
+                            <option value="itajai">Itajai</option>
+                            <option value="Gaspar">Balneario Camboriu</option>
+                            <option value="Botuverá">Navegantes</option>
+                            <option value="Nova Trento">Gaspar</option>
+                        </select>
+                    </div>
+                    <div class="form-group mt-5">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input" <?=
+                                                                                                                isset($_COOKIE['senhaDoUsuario'])
+                                                                                                                    ? " checked" : ""; ?>>
+                            <label for="lembrar" class="custom-control-label">
+                                Lembrar de mim.
+                            </label>
+
+                            <a href="#" class="float-right" id="btnEsqueci">
+                                Esqueci a senha!
+                            </a>
+                        </div>
+                        
+                        <div class="form-group mt-2">
+                            <p class="text-center">
+                                Mostre-me
+                                <a href="index.php" id="btnVoltar">
+                                    Voltar
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Novo!" name="btnEnviar" id="btnEnviar" class="btn btn-primary btn-block">
+                    </div>
         </section>
         <!-- Final do formulário de 
         cadastro de novos usuários -->
@@ -191,8 +267,10 @@
                     }
                 }
             });
+
             $("#formLogin").validate();
             $("#formSenha").validate();
+
             //Mostrar e Ocultar Formulários
             $("#btnEsqueci").click(function() {
                 $("#caixaLogin").hide(); //Ocultar Login
@@ -210,6 +288,14 @@
                 $("#caixaLogin").show(); //Mostrar
                 $("#caixaRegistro").hide(); //Ocultar
             });
+            $("#btnMostrar").click(function() {
+                $("#caixaLogar").show(); //Mostrar
+                $("#caixaLogin").hide(); //Ocultar
+            });
+
+
+
+            $("#btnVoltar")
             //Cadastro de novo usuário
             $("#btnRegistrar").click(function(e) {
                 if (document
@@ -241,14 +327,12 @@
                         method: 'post',
                         data: $("#formLogin").serialize() + '&action=login',
                         success: function(resposta) {
-
                             $("#alerta").show();
-                            //   $(".resultado").html(resposta);
+                            //$(".resultado").html(resposta);
                             if (resposta === "ok") {
                                 window.location = "perfil.php";
                             } else {
                                 $(".resultado").html(resposta);
-
                             }
                         }
                     });
