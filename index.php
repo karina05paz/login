@@ -142,28 +142,31 @@
                     <div class="form-group">
                         <input type="password" name="senhaUsuarioConfirmar" id="senhaUsuarioConfirmar" class="form-control" placeholder="Confirmar senha" required minlength="6">
                     </div>
-                    <div class="form-group mt-4">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="concordar" id="concordar" class="custom-control-input">
-                            <label for="concordar" class="custom-control-label">
-                                Eu concordo com <a href="#">
-                                    os termos e condições.</a>
-                            </label>
-                        </div>
-                    </div>
                     <div class="form-group">
-                        <input type="submit" value="::Registrar::" name="btnRegistrar" id="btnRegistrar" class="btn btn-primary btn-block">
-                    </div>
-                    <div class="form-group">
-                        <p class="text-center">
-                            Já registrado?
-                            <a href="#" id="btnJaRegistrado2">
-                                Entrar por aqui.
-                            </a>
-                        </p>
-                    </div>
+                    <input type="urlDePerfil" name="urlDePerfil" id="urlDePerfil" class="form-control" placeholder="url De Perfil" required minlength="6">
+            </div>
+            <div class="form-group mt-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="concordar" id="concordar" class="custom-control-input">
+                    <label for="concordar" class="custom-control-label">
+                        Eu concordo com <a href="#">
+                            os termos e condições.</a>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="::Registrar::" name="btnRegistrar" id="btnRegistrar" class="btn btn-primary btn-block">
+            </div>
+            <div class="form-group">
+                <p class="text-center">
+                    Já registrado?
+                    <a href="#" id="btnJaRegistrado2">
+                        Entrar por aqui.
+                    </a>
+                </p>
+            </div>
 
-                </form>
+            </form>
             </div>
         </section>
         <section>
@@ -229,7 +232,7 @@
                                 Esqueci a senha!
                             </a>
                         </div>
-                        
+
                         <div class="form-group mt-2">
                             <p class="text-center">
                                 Mostre-me

@@ -29,4 +29,6 @@ if (isset($_POST['nome'])) {
     print("$_POST[senha]");
     print("\n<br><strong>Data de Nascimento: </strong>");
     print("$_POST[data_de_nascimento]");
+   // print("\n<br><strong> urlPerfil: </strong>");
+   // print("$_POST[urlPerfil]");
 }

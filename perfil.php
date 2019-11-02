@@ -1,10 +1,6 @@
-<?php 
+<?php
 require_once "session.php";
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,63 +12,55 @@ require_once "session.php";
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Página de perfil.</title>
+    <title>Página de Perfil</title>
 </head>
 
-
 <body>
-
+    <!-- Barra de navegação -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">PaZk Systems</a>
+        <a class="navbar-brand" href="#">KARINA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse bg-dark" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(Página atual)</span></a>
+                    <a class="nav-link" href="#">Início<span class="sr-only">(Página atual)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Destaques</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="fotos.php">Fotos</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?=$nomeDoUsuario?>
+                        <?= $nomeDoUsuario ?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Sobre</a>
-                        <a class="dropdown-item" href="#">Fotos</a>
+                        <a class="dropdown-item" href="fotos.php">Fotos</a>
                         <a class="dropdown-item" href="sair.php">Sair</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
+    <!-- Fim da barra de navegação -->
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Aloha!</h1>
-            
-            <h2 class="display-2 text-center  rounded p-1 text-light" 
-            style="background-color: deepPink; color:deepPink;">
-            <?= $nomeCompleto ?>
-            
-            </h2>
-
-            <h2 class="text-center">
-                E-mail Do Usuário: 
-                <a href="mailto:<?=$emailUsuario?>">
-                <?=$emailUsuario?>
-                </a>
-            </h2> 
-
-            <h2 class="text-center">
-                Registrado em: 
-                <?=$dataCriado?>
-            </h2>
-
-
+            <h1 class="display-4">ALOHA!</h1>
+            <h2 class="display-2 text-center bg-info text-light rounded p-2"><?= $nomeCompleto ?></h2>
+            <div class="row">
+                <div class="col-4">
+                    <img src="<?= $urlDePerfil ?>" width="300" alt="foto de perfil">
+                </div>
+                <div class="col-8">
+                    <h2 class="text-center">E-mail do Usuário: <a href="mailto:<?= $emailUsuario ?>"><?= $emailUsuario ?></a></h2>
+                    <h2 class="text-center">Registrado em: <?= $dataCriado ?></h2>
+                </div>
+            </div>
         </div>
     </div>
 
