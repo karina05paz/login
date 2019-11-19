@@ -4,13 +4,37 @@ if(isset($_GET['token']) && isset($_GET['email'])){
     require_once 'configBD.php';
     $email=$_GET['email'];
     $token=$_GET['token'];
-    $msg="$email: $token";
-}
-else{
-    
+    //$msg="$email: $token";
+
+    $sql = $connect->prepare("SELECT * FROM usuario WHERE emailUsuario=? 
+    AND token=? AND tempoDeVida> now()");
+    $sql->bind_param("ss",$email, $token);
+    $sql->execute();
+
+    $resultado =$sql->get_result();
+    if($resultado->num_rows>0){
+        if(isset($_POST['gerar'])){
+            $nova_senha = sha1($_POST['senha']);
+            $confi,rmar_senha = sha1($_POST['csenha']);
+        if($nova_senha == $confirmar_senha){
+                $sql=$connect->prepare("UPDATE usuario SET senhaDoUsuario=?, token=''
+                WHERE emailUsuario=?");
+                $sql->bind_param("ss", $nova_senha,$email);
+                $sql->execute();
+                $msg = "Senha alterada com sucesso";
+
+        } else{
+            $msg = "Senhas não conferem";
+        } 
+    }//verificando se são validos 
+    }else{
         header("location:index.php");
         exit();
     }
+} else {
+    header("location:index.php");
+    exit();
+}
 
 
 
@@ -58,7 +82,7 @@ else{
                     </div>
                     <div class="form-group">
                     <input type ="submit" value="Criar a Nova Senha" 
-                    nome="gerar" class="btn btn-block btn-primary">
+                    name="gerar" class="btn btn-block btn-primary">
                     </div>
 
                 </form>

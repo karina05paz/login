@@ -133,9 +133,17 @@ if($resposta->num_rows>0){
         WHERE emailUsuario = ? ");
         $sql->bind_param("ss", $token,$email);
         $sql->execute();
-        echos
+        
+        //echo "Token no banco de dados";
+        
+        $link = "<a href='gerarSenha.php?email=$email&token=$token'>
+        Clique aqui para gerar Nova Senha</a>";
+
+        echo $link;//este link deve ser enviado por e-mail 
+
+
 }else{
-    echo "E-mail não encontrado";
+    echo ("E-mail não encontrado");
 }
 
     }else{
